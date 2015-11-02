@@ -121,25 +121,5 @@
       </div>
     </div>
 
-    <script>
-    function replaceIntegers(hi)
-                {
-                  var integers = document.getElementsByClassName("integer");
-                  console.log(integers)
-                  //Provides the multiplier based on amount of kladdkaka! 0.5, 1, 1.5, 2
-                  var multiplier = document.getElementById("portioner");
-                  var current_multiplier = multiplier.options[multiplier.selectedIndex].value;
-                  console.log("multiplier", multiplier)
-                  console.log("current_multiplier:",current_multiplier)
-
-                    for(var i=0; i<integers.length; i++)
-                    {
-                      console.log(integers[i]);
-                      integers[i].innerHTML = integers[i].innerHTML * current_multiplier;
-
-                    }
-                }
-                replaceIntegers()
-    </script>
 </body>
 </html>
