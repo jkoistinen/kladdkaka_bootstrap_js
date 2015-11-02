@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Recept på Kladdkaka</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!--<style>
+    body {
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    }
+
+    </style> -->
+
+    <style type="text/css">
+
+  /* Sticky footer styles
+  -------------------------------------------------- */
+
+  html,
+  body {
+    height: 100%;
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    /* The html and body elements cannot have any padding or margin. */
+  }
+
+  /* Wrapper for page content to push down footer */
+  #wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+  }
+
+  /* Set the fixed height of the footer here */
+  #push,
+  #footer {
+    height: 60px;
+  }
+  #footer {
+    background-color: #3399FF;
+  }
+
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 76px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+
+
+  /* Custom page CSS
+  -------------------------------------------------- */
+  /* Not required for template or sticky footer method. */
+
+  .container {
+    width: auto;
+    max-width: auto;
+  }
+  .container .credit {
+    margin: 20px 0;
+  }
+
+</style>
+
+  </head>
+
+<body>
+  <!-- Part 1: Wrap all page content here -->
+<div id="wrap">
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+<h1><p class="text-center">Kladdkaka</p></h1>
+<ul class="pager">
+  <li><a href="recept.html">Recept</a></li>
+</ul>
+        </div>
+      </div>
+    <div class="row">
+
+        <div class="col-xs-12">
+          <section>
+
+          <p class="text-center"><img src="kladdkaka.jpeg" class="img-rounded" alt="Kladdkaka"></p>
+          <p class="text-center">Det absolut bästa receptet på kladdkaka!</p>
+
+          </section>
+        </div>
+
+    </div>
+</div>
+
+<div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit"><b>Skapad av:</b> <em>Jaakko Koistinen</em></a>.</p>
+      </div>
+    </div>
+
+    <script>
+    function replaceIntegers(hi)
+                {
+                  var integers = document.getElementsByClassName("integer");
+                  console.log(integers)
+                  //Provides the multiplier based on amount of kladdkaka! 0.5, 1, 1.5, 2
+                  var multiplier = document.getElementById("portioner");
+                  var current_multiplier = multiplier.options[multiplier.selectedIndex].value;
+                  console.log("multiplier", multiplier)
+                  console.log("current_multiplier:",current_multiplier)
+
+                    for(var i=0; i<integers.length; i++)
+                    {
+                      console.log(integers[i]);
+                      integers[i].innerHTML = integers[i].innerHTML * current_multiplier;
+
+                    }
+                }
+                replaceIntegers()
+    </script>
+</body>
+</html>

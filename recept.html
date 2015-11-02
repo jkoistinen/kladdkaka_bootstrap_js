@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Recept på Kladdkaka</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- <style>
+    body {
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    }
+
+  </style> -->
+
+    <style type="text/css">
+
+  /* Sticky footer styles
+  -------------------------------------------------- */
+
+  html,
+  body {
+    height: 100%;
+    background-image: url('bg.png');
+    background-repeat: repeat;
+    /* The html and body elements cannot have any padding or margin. */
+  }
+
+  /* Wrapper for page content to push down footer */
+  #wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -60px;
+  }
+
+  /* Set the fixed height of the footer here */
+  #push,
+  #footer {
+    height: 60px;
+  }
+  #footer {
+    background-color: #3399FF;
+  }
+
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 76px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+
+
+  /* Custom page CSS
+  -------------------------------------------------- */
+  /* Not required for template or sticky footer method. */
+
+  .container {
+    width: auto;
+    max-width: auto;
+  }
+  .container .credit {
+    margin: 20px 0;
+  }
+
+  .btn-rating {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+</style>
+
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+          <h1><p class="text-center">Kladdkaka</p></h1>
+          <ul class="pager">
+            <li><a href="index.html">Beskrivning</a></li>
+          </ul>
+          <p class="text-center"><img src="kladdkaka.jpeg" class="img-rounded" alt="Kladdkaka"></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4">
+        </div>
+          <div class="col-xs-4">
+            <div class="form-group">
+            <label for="sel1">Antal bitar:</label>
+            <select class="form-control" id="portioner" onchange="replaceIntegers(), replaceFractions()">
+              <option value="0.5">7</option>
+                <option value="1" selected>14</option>
+              <option value="1.5">21</option>
+              <option value="2">28</option>
+            </select>
+          </div>
+          </div>
+
+          <div class="col-xs-4">
+          </div>
+    </div>
+
+    <div class="row">
+
+          <div class="col-xs-12">
+
+          <div class="rating-select text-center">
+    <label>Betyg:</label>
+    <div class="btn btn-rating btn-sm" onclick="setRating(1)" onmouseenter="slideRating(1)" onmouseleave="slideRating('clear')"><span class="glyphicon glyphicon-star-empty"></span></div>
+    <div class="btn btn-rating btn-sm" onclick="setRating(2)" onmouseenter="slideRating(2)" onmouseleave="slideRating('clear')"><span class="glyphicon glyphicon-star-empty"></span></div>
+    <div class="btn btn-rating btn-sm" onclick="setRating(3)" onmouseenter="slideRating(3)" onmouseleave="slideRating('clear')"><span class="glyphicon glyphicon-star-empty"></span></div>
+    <div class="btn btn-rating btn-sm" onclick="setRating(4)" onmouseenter="slideRating(4)" onmouseleave="slideRating('clear')"><span class="glyphicon glyphicon-star-empty"></span></div>
+    <div class="btn btn-rating btn-sm" onclick="setRating(5)" onmouseenter="slideRating(5)" onmouseleave="slideRating('clear')"><span class="glyphicon glyphicon-star-empty"></span></div>
+  </div>
+
+          </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+          <h2>Ingredienser:</h2>
+          <ul class="list-style grocerylist">
+            <!-- This is how a list item should look like when hovered -->
+            <li onmouseover="crossOutFromShoppingList('hover', 0)" onclick="crossOutFromShoppingList('click', 0)" onmouseleave="crossOutFromShoppingList('hoverout', 0)"><p><span class="integer" data-defaultinteger="100"><span>100</span><span>g smör</span><span class="glyph"></span></p></li>
+            <li onmouseover="crossOutFromShoppingList('hover', 1)" onclick="crossOutFromShoppingList('click', 1)" onmouseleave="crossOutFromShoppingList('hoverout', 1)"><p><span class="fraction" data-defaultfraction="2 1/2"><span>2 1/2</span><span> dl strösocker</span><span class="glyph"></span></p></li>
+            <li onmouseover="crossOutFromShoppingList('hover', 2)" onclick="crossOutFromShoppingList('click', 2)" onmouseleave="crossOutFromShoppingList('hoverout', 2)"><p><span class="integer" data-defaultinteger="2"><span>2</span><span> ägg</span><span class="glyph"></span></p></li>
+            <li onmouseover="crossOutFromShoppingList('hover', 3)" onclick="crossOutFromShoppingList('click', 3)" onmouseleave="crossOutFromShoppingList('hoverout', 3)"><p><span class="fraction" data-defaultfraction="1"><span>1</span><span> dl vetemjöl</span><span class="glyph"></span></p></li>
+            <li onmouseover="crossOutFromShoppingList('hover', 4)" onclick="crossOutFromShoppingList('click', 4)" onmouseleave="crossOutFromShoppingList('hoverout', 4)"><p><span class="integer" data-defaultinteger="3"><span>3</span><span> msk kakao</span><span class="glyph"></span></p></li>
+            <li onmouseover="crossOutFromShoppingList('hover', 5)" onclick="crossOutFromShoppingList('click', 5)" onmouseleave="crossOutFromShoppingList('hoverout', 5)"><p><span class="integer" data-defaultinteger="1"><span>1</span><span> tsk vaniljsocker</span><span class="glyph"></span></p></li>
+          </ul>
+
+      </div>
+        <div class="col-sm-6">
+
+          <h2>Garnering:</h2>
+          <em>
+          <ul class="list-style grocerylist">
+          <li onmouseover="crossOutFromShoppingList('hover', 6)" onclick="crossOutFromShoppingList('click', 6)" onmouseleave="crossOutFromShoppingList('hoverout', 6)"><p><span><span></span><span>florsocker</span><span class="glyph"></span></p></li>
+          </ul>
+        </em>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+          <article>
+          <h2>Gör så här:</h2>
+          <p>Sätt ugnen på 175°. Smält smöret i en kastrull. Lyft av kastrullen från plattan. Rör ner socker och ägg, blanda väl. Rör ner övriga ingredienser så att allt blir väl blandat. Häll smeten i en smord och bröad form med löstagbar kant, ca 24 cm i diameter. Grädda mitt i ugnen ca 15 min. Kakan blir låg med ganska hård yta och lite kladdig i mitten. Låt kakan kallna. Pudra över florsocker. Servera med grädde eller glass och frukt.</p>
+          </article>
+        </div>
+</div>
+</div>
+
+<div id="push"></div>
+    </div>
+
+<div id="footer">
+  <div class="container">
+    <p class="muted credit"><b>Skapad av:</b> <em>Jaakko Koistinen</em></a>.</p>
+  </div>
+</div>
+
+<script src="fraction.js"></script>
+<script src="custom.js"></script>
+</body>
+</html>
